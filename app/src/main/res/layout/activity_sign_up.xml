@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpActivity">
+
+    <EditText
+        android:id="@+id/level_TextNumber"
+        android:layout_width="149dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginRight="47dp"
+        android:layout_marginBottom="14dp"
+        android:background="@drawable/circle"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Student ID"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/Password_Text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Level_TextNumber"
+        app:layout_constraintTop_toBottomOf="@+id/Department_PlainText" />
+
+    <EditText
+        android:id="@+id/FullName_PlainText"
+        android:layout_width="149dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="17dp"
+        android:background="@drawable/circle"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Full Name "
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/Level_TextNumber"
+        app:layout_constraintEnd_toStartOf="@+id/Department_PlainText"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/Level_TextNumber"
+        android:layout_width="149dp"
+        android:layout_height="50dp"
+        android:background="@drawable/circle"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="level"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="408dp" />
+
+    <EditText
+        android:id="@+id/userName_Plaintext"
+        android:layout_width="149dp"
+        android:layout_height="50dp"
+        android:background="@drawable/circle"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="username"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="472dp" />
+
+    <EditText
+        android:id="@+id/Password_Text"
+        android:layout_width="149dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="81dp"
+        android:background="@drawable/circle"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Password"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toEndOf="@+id/userName_Plaintext"
+        app:layout_constraintTop_toBottomOf="@+id/Department_PlainText" />
+
+    <EditText
+        android:id="@+id/Department_PlainText"
+        android:layout_width="148dp"
+        android:layout_height="51dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
+        android:background="@drawable/circle"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Departement"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="340dp" />
+
+    <Button
+        android:id="@+id/SignUp_Button"
+        android:layout_width="308dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginRight="51dp"
+        android:layout_marginBottom="133dp"
+        android:background="@drawable/circle"
+        android:text="SIGNUP"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userName_Plaintext" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="346dp"
+        android:layout_height="258dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginRight="33dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/student_and_teacher" />
+
+    <RadioButton
+        android:id="@+id/Teacher_RadioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
+        android:layout_marginBottom="20dp"
+        android:text="Teacher"
+        android:textColor="#A235B5"
+        app:layout_constraintBottom_toTopOf="@+id/FullName_PlainText"
+        app:layout_constraintEnd_toStartOf="@+id/Student_RadioButton" />
+
+    <RadioButton
+        android:id="@+id/Student_RadioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Student"
+        tools:layout_editor_absoluteX="223dp"
+        tools:layout_editor_absoluteY="287dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
