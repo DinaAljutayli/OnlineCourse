@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpActivity">
+    tools:context=".SignUp_Student">
 
     <EditText
-        android:id="@+id/level_TextNumber"
+        android:id="@+id/FaculityID_TextNumber"
         android:layout_width="149dp"
         android:layout_height="50dp"
         android:layout_marginStart="15dp"
@@ -19,12 +19,13 @@
         android:background="@drawable/circle"
         android:ems="10"
         android:gravity="center"
-        android:hint="Student ID"
+        android:hint="@string/student_id"
         android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/Password_Text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Level_TextNumber"
-        app:layout_constraintTop_toBottomOf="@+id/Department_PlainText" />
+        app:layout_constraintTop_toBottomOf="@+id/Department_PlainText"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/FullName_PlainText"
@@ -35,39 +36,50 @@
 
         android:layout_marginEnd="12dp"
         android:layout_marginRight="12dp"
-        android:layout_marginBottom="17dp"
+        android:layout_marginBottom="16dp"
+        android:autofillHints=""
         android:background="@drawable/circle"
         android:ems="10"
         android:gravity="center"
-        android:hint="Full Name "
+        android:hint="@string/full_name"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/Level_TextNumber"
         app:layout_constraintEnd_toStartOf="@+id/Department_PlainText"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/Level_TextNumber"
         android:layout_width="149dp"
         android:layout_height="50dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/circle"
         android:ems="10"
         android:gravity="center"
-        android:hint="level"
+        android:hint="@string/level"
         android:inputType="number"
-        tools:layout_editor_absoluteX="52dp"
-        tools:layout_editor_absoluteY="408dp" />
+        app:layout_constraintBottom_toTopOf="@+id/userName_Plaintext"
+        app:layout_constraintStart_toStartOf="parent"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/userName_Plaintext"
         android:layout_width="149dp"
         android:layout_height="50dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
         android:background="@drawable/circle"
         android:ems="10"
         android:gravity="center"
-        android:hint="username"
+        android:hint="@string/username"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="52dp"
-        tools:layout_editor_absoluteY="472dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.691"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/Password_Text"
@@ -75,14 +87,17 @@
         android:layout_height="48dp"
         android:layout_marginStart="11dp"
         android:layout_marginLeft="11dp"
-        android:layout_marginTop="81dp"
+        android:layout_marginTop="80dp"
         android:background="@drawable/circle"
         android:ems="10"
         android:gravity="center"
-        android:hint="Password"
+        android:hint="@string/password"
         android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toEndOf="@+id/userName_Plaintext"
-        app:layout_constraintTop_toBottomOf="@+id/Department_PlainText" />
+        app:layout_constraintTop_toBottomOf="@+id/Department_PlainText"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/Department_PlainText"
@@ -90,13 +105,15 @@
         android:layout_height="51dp"
         android:layout_marginEnd="48dp"
         android:layout_marginRight="48dp"
+        android:layout_marginBottom="159dp"
         android:background="@drawable/circle"
         android:ems="10"
         android:gravity="center"
-        android:hint="Departement"
+        android:hint="@string/departement"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/SignUp_Button"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="340dp" />
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/SignUp_Button"
@@ -109,7 +126,7 @@
         android:layout_marginRight="51dp"
         android:layout_marginBottom="133dp"
         android:background="@drawable/circle"
-        android:text="SIGNUP"
+        android:text="@string/signup"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -128,35 +145,38 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/student_and_teacher" />
+        app:srcCompat="@drawable/student_and_teacher"
+        android:contentDescription="TODO" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="277dp"
         android:layout_height="52dp"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteX="88dp"
-        tools:layout_editor_absoluteY="280dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="280dp"
+        tools:ignore="MissingConstraints">
 
-        <RadioButton
-            android:id="@+id/Teacher_RadioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="64dp"
-            android:layout_marginRight="64dp"
-            android:layout_marginBottom="20dp"
-            android:text="Teacher"
-            android:textColor="#A235B5"
-            app:layout_constraintBottom_toTopOf="@+id/FullName_PlainText"
-            app:layout_constraintEnd_toStartOf="@+id/Student_RadioButton" />
+          <RadioButton
+        android:id="@+id/Teacher_RadioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/teacher"
+        android:textColor="#A235B5"
+        app:layout_constraintBottom_toTopOf="@+id/FullName_PlainText"
+        app:layout_constraintEnd_toStartOf="@+id/Student_RadioButton" />
 
-        <RadioButton
-            android:id="@+id/Student_RadioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Student"
-            tools:layout_editor_absoluteX="223dp"
-            tools:layout_editor_absoluteY="287dp" />
-    </RadioGroup>
+    <RadioButton
+        android:id="@+id/Student_RadioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/student"
+        tools:layout_editor_absoluteX="223dp"
+        tools:layout_editor_absoluteY="287dp" />
+</RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

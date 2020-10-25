@@ -29,7 +29,7 @@
         android:layout_marginEnd="103dp"
         android:layout_marginRight="103dp"
         android:background="@drawable/circle"
-        android:text="LOGIN"
+        android:text="@string/login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -47,7 +47,7 @@
         android:layout_marginEnd="84dp"
         android:layout_marginRight="84dp"
         android:background="@drawable/circle"
-        android:text="SIGNUP"
+        android:text="@string/signup"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -65,7 +65,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.706"
-        app:srcCompat="@drawable/welcomee" />
+        app:srcCompat="@drawable/welcomee"
+        android:contentDescription="TODO" />
 
     <ImageView
         android:id="@+id/imageView3"

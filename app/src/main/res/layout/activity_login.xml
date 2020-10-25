@@ -27,7 +27,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/password_editext_login"
@@ -46,7 +47,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username_editext_login" />
+        app:layout_constraintTop_toBottomOf="@+id/username_editext_login"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/login_button"
@@ -89,7 +91,7 @@
         android:layout_width="176dp"
         android:layout_height="29dp"
         android:layout_marginBottom="72dp"
-        android:text="Don't have an account?"
+        android:text="@string/don_t_have_an_account"
         android:textColor="#A235B5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -102,7 +104,7 @@
         android:id="@+id/signUp_textview"
         android:layout_width="76dp"
         android:layout_height="22dp"
-        android:text="Sign Up"
+        android:text="@string/sign_up"
         android:textColor="#A235B5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -120,7 +122,8 @@
         app:layout_constraintHorizontal_bias="0.375"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/login" />
+        app:srcCompat="@drawable/login"
+        android:contentDescription="TODO" />
 
     <ImageView
         android:id="@+id/imageView7"
@@ -131,7 +134,8 @@
         android:layout_marginBottom="576dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/circle_blue" />
+        app:srcCompat="@drawable/circle_blue"
+        android:contentDescription="TODO" />
 
     <ImageView
         android:id="@+id/imageView8"
@@ -142,6 +146,7 @@
         android:layout_marginTop="628dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/circle_purpule" />
+        app:srcCompat="@drawable/circle_purpule"
+        android:contentDescription="TODO" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
