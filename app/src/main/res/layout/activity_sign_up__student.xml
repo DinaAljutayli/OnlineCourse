@@ -1,136 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SignUp_Student">
 
-    <EditText
-        android:id="@+id/FaculityID_TextNumber"
-        android:layout_width="149dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="47dp"
-        android:layout_marginRight="47dp"
-        android:layout_marginBottom="14dp"
-        android:background="@drawable/circle"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="@string/student_id"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/Password_Text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Level_TextNumber"
-        app:layout_constraintTop_toBottomOf="@+id/Department_PlainText"
-        android:autofillHints="" />
-
-    <EditText
-        android:id="@+id/FullName_PlainText"
-        android:layout_width="149dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
-
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
-        android:layout_marginBottom="16dp"
-        android:autofillHints=""
-        android:background="@drawable/circle"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="@string/full_name"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/Level_TextNumber"
-        app:layout_constraintEnd_toStartOf="@+id/Department_PlainText"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/Level_TextNumber"
-        android:layout_width="149dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/circle"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="@string/level"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/userName_Plaintext"
-        app:layout_constraintStart_toStartOf="parent"
-        android:autofillHints="" />
-
-    <EditText
-        android:id="@+id/userName_Plaintext"
-        android:layout_width="149dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
-        android:background="@drawable/circle"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="@string/username"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.691"
-        android:autofillHints="" />
-
-    <EditText
-        android:id="@+id/Password_Text"
-        android:layout_width="149dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginTop="80dp"
-        android:background="@drawable/circle"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.08"
-        app:layout_constraintStart_toEndOf="@+id/userName_Plaintext"
-        app:layout_constraintTop_toBottomOf="@+id/Department_PlainText"
-        android:autofillHints="" />
-
-    <EditText
-        android:id="@+id/Department_PlainText"
-        android:layout_width="148dp"
-        android:layout_height="51dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginRight="48dp"
-        android:layout_marginBottom="159dp"
-        android:background="@drawable/circle"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="@string/departement"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/SignUp_Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:autofillHints="" />
-
-    <Button
-        android:id="@+id/SignUp_Button"
-        android:layout_width="308dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="51dp"
-        android:layout_marginRight="51dp"
-        android:layout_marginBottom="133dp"
-        android:background="@drawable/circle"
-        android:text="@string/signup"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userName_Plaintext" />
 
     <ImageView
         android:id="@+id/imageView12"
@@ -138,45 +13,123 @@
         android:layout_height="258dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="33dp"
         android:layout_marginRight="33dp"
+        android:contentDescription="@string/studentspic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/student_and_teacher"
-        android:contentDescription="TODO" />
+        app:srcCompat="@drawable/student_and_teacher" />
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="277dp"
-        android:layout_height="52dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="280dp"
-        tools:ignore="MissingConstraints">
 
-          <RadioButton
-        android:id="@+id/Teacher_RadioButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="64dp"
-        android:layout_marginRight="64dp"
-        android:layout_marginBottom="20dp"
-        android:text="@string/teacher"
-        android:textColor="#A235B5"
-        app:layout_constraintBottom_toTopOf="@+id/FullName_PlainText"
-        app:layout_constraintEnd_toStartOf="@+id/Student_RadioButton" />
 
-    <RadioButton
-        android:id="@+id/Student_RadioButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/student"
-        tools:layout_editor_absoluteX="223dp"
-        tools:layout_editor_absoluteY="287dp" />
-</RadioGroup>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <EditText
+        android:layout_below="@id/imageView12"
+        android:id="@+id/FullName_PlainText"
+        android:layout_width="149dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="50dp"
+        android:background="@drawable/circle"
+        android:gravity="center"
+        android:hint="@string/full_name"
+        android:inputType="textPersonName"
+        android:layout_marginLeft="50dp"
+        android:importantForAutofill="no" />
+
+
+    <EditText
+        android:layout_below="@id/imageView12"
+        android:layout_toRightOf="@id/FullName_PlainText"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/userName_Plaintext"
+        android:layout_width="149dp"
+        android:layout_height="50dp"
+        android:background="@drawable/circle"
+        android:gravity="center"
+        android:hint="@string/username"
+        android:inputType="textPersonName"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@id/FullName_PlainText"
+        android:importantForAutofill="no" />
+
+
+    <EditText
+        android:layout_below="@id/FullName_PlainText"
+        android:id="@+id/Level_TextNumber"
+        android:layout_width="149dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/circle"
+        android:gravity="center"
+        android:hint="@string/level"
+        android:inputType="number"
+        android:importantForAutofill="no" />
+
+
+    <EditText
+        android:id="@+id/Department_PlainText"
+        android:layout_width="149dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/userName_Plaintext"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/circle"
+        android:gravity="center"
+        android:hint="@string/departement"
+        android:inputType="textPersonName"
+        android:layout_toRightOf="@+id/Level_TextNumber"
+        android:layout_marginLeft="20dp"
+        android:importantForAutofill="no"
+        android:layout_toEndOf="@+id/Level_TextNumber"
+        android:layout_marginStart="20dp" />
+
+    <EditText
+        android:layout_below="@id/Level_TextNumber"
+        android:id="@+id/StudentID_PlainText"
+        android:layout_width="149dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/circle"
+        android:gravity="center"
+        android:hint="@string/student_id"
+        android:inputType="number"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/Password_Text"
+        android:layout_width="149dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/Department_PlainText"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/StudentID_PlainText"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/circle"
+        android:gravity="center"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:importantForAutofill="no"
+        android:layout_toEndOf="@id/StudentID_PlainText"
+        android:layout_marginStart="20dp" />
+
+    <Button
+        android:id="@+id/SignUp_Button"
+        android:layout_width="308dp"
+        android:layout_height="48dp"
+        android:layout_below="@id/imageView12"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="270dp"
+        android:background="@drawable/circle"
+        android:text="@string/signup" />
+
+
+</RelativeLayout>

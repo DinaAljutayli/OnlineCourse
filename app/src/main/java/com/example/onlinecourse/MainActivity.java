@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent SignUpIntent = new Intent(MainActivity.this, SignUp_Student.class);
+                Intent SignUpIntent = new Intent(MainActivity.this, TeacherOrStudent.class);
                 startActivity(SignUpIntent);
             }
         });

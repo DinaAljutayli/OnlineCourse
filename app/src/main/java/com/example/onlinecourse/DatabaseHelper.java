@@ -8,29 +8,41 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME ="info.db";
-    public static final String TABLE_NAME ="registeruser";
+    public static final String DATABASE_NAME ="TecherStudent.db";
+    public static final String TABLE1_NAME = "Student";
+    public static final String TABLE2_NAME = "Teacher";
+    public static final String TABLE3_NAME = "Course";
 
-    public static final String COL_1 ="Username";
-    public static final String COL_2 ="Email";
-    public static final String COL_3 ="password";
+    public static final String COLUMN_STUDENT_NAME ="Full_Name";
+    public static final String COLUMN_STUDENT_DEPARTMENT ="Department";
+    public static final String COLUMN_STUDENT_LEVEL ="Level";
+    public static final String COLUMN_STUDENT_ID ="Student_ID";
+    public static final String COLUMN_STUDENT_USERNAME ="Username";
+    public static final String COLUMN_STUDENT_PASSWORD ="Password";
+    public static final String COLUMN_STUDENT_COURSES ="Courses";
 
-    private SQLiteDatabase db;
+    SQLiteDatabase sqLiteDatabase;
 
     public DatabaseHelper(Context context) {
 
         super(context, DATABASE_NAME, null, 1);
+
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
-        sqLiteDatabase.execSQL("CREATE TABLE registeruser (Username TEXT PRIMARY  KEY , Email TEXT, password TEXT)");
+
+        String CREATE_STUDENT_TABLE = "CREATE TABLE " + TABLE1_NAME + "(Student_ID INTEGER PRIMARY KEY, Department TEXT)";
+        sqLiteDatabase.execSQL(CREATE_STUDENT_TABLE);
+
 
     }
 
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE1_NAME);
+        onCreate(sqLiteDatabase);
     }
 
 
@@ -46,7 +58,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return  res;
     }
 
-    public boolean checkUser(String username, String password ){
+  /*  public boolean checkUser(String username, String password ){
         String[] columns = { COL_1 };
         SQLiteDatabase db = getReadableDatabase();
         String selection =   COL_1 + "=?" + " and " + COL_3 + "=?";
@@ -61,9 +73,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         else
             return  false;
     }
-
+*/
     public void openDatabase() {
-        db = this.getWritableDatabase();
+        sqLiteDatabase = this.getWritableDatabase();
     }
 
 

@@ -36,13 +36,13 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String user = username_editext_login.getText().toString().trim();
                 String password = password_editext_login.getText().toString().trim();
-                Boolean res = db.checkUser(user, password);
+             //   Boolean res = db.checkUser(user, password);
 
-                if (res == true) {
+              /*  if (res == true) {
 
                 } else {
 
-                }
+                }*/
             }
 
         });

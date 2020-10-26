@@ -9,10 +9,9 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
-    <string name="student_id">Student ID</string>
-    <string name="level">level</string>
+    <string name="level">Level</string>
     <string name="full_name">Full Name</string>
-    <string name="username">username</string>
+    <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="signup">SIGNUP</string>
     <string name="departement">Departement</string>
@@ -22,4 +21,6 @@
     <string name="sign_up">Sign Up</string>
     <string name="login">LOGIN</string>
     <string name="faculityid">FaculityID</string>
+    <string name="studentspic">StudentsPic</string>
+    <string name="student_id">Student ID</string>
 </resources>
