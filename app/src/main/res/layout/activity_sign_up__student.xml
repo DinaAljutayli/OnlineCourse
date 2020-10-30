@@ -121,7 +121,7 @@
         android:layout_marginStart="20dp" />
 
     <Button
-        android:id="@+id/SignUp_Button"
+        android:id="@+id/SignUp_Teacher_Button"
         android:layout_width="308dp"
         android:layout_height="48dp"
         android:layout_below="@id/imageView12"

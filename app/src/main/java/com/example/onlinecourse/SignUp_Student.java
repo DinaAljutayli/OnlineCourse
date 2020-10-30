@@ -7,9 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import com.example.onlinecourse.ui.login.LoginActivity;
 
 public class SignUp_Student extends AppCompatActivity {
     DatabaseHelper db;
@@ -33,7 +33,7 @@ public class SignUp_Student extends AppCompatActivity {
         StudentID_PlaneText = findViewById(R.id.StudentID_PlaneText);
         Password_Text = findViewById(R.id.Password_Text);
 
-        SignUp_Button = findViewById(R.id.SignUp_Button);
+        SignUp_Button = findViewById(R.id.SignUp_Teacher_Button);
 
         SignUp_Button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,9 +46,18 @@ public class SignUp_Student extends AppCompatActivity {
                 String password = Password_Text.getText().toString().trim();
                 String username = userName_Planetext.getText().toString().trim();
 
-                db.addStudent(id,level,department,fullName,password,username);
+               long val = db.addStudent(id,level,department,fullName,password,username);
 
-                Toast.makeText(SignUp_Student.this, "Sign Up successfully ! ",  Toast.LENGTH_SHORT).show();
+                if(val>0) {
+
+                    Toast.makeText(SignUp_Student.this, "Sign Up successfully ! ", Toast.LENGTH_SHORT).show();
+                    Intent loginIntent = new Intent(SignUp_Student.this, LoginActivity.class);
+                    startActivity(loginIntent);
+                }
+                else {
+                    Toast.makeText(SignUp_Student.this, "Not registered, Please sign up", Toast.LENGTH_SHORT).show();
+
+                }
 
             }
         });

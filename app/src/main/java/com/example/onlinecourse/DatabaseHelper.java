@@ -14,7 +14,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     private static final String DATABASE_NAME = "StudentTeacher.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     private static final String TABLE_STUDENT = "student";
     private static final String TABLE_TEACHER = "teacher";
 
@@ -46,7 +46,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-     final String queyStudent = "CREATE TABLE " + TABLE_STUDENT + " ("+
+     final String queryStudent = "CREATE TABLE " + TABLE_STUDENT + " ("+
              COL_STUDENT_ID + " TEXT PRIMARY KEY, "+
              COL_STUDENT_NAME + " TEXT, " +
              COL_STUDENT_PASSWORD + " TEXT, " +
@@ -55,17 +55,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
              COL_STUDENT_LEVEL + " TEXT);";
 
 
-     db.execSQL(queyStudent);
+     final String queryTeacher = "CREATE TABLE " + TABLE_TEACHER + " (" +
+             COL_TEACHER_ID + " TEXT PRIMARY KEY, "+
+             COL_TEACHER_NAME + " TEXT, " +
+             COL_TEACHER_PASSWORD + " TEXT, "+
+             COL_TEACHER_USERNAME + " TEXT, "+
+             COL_TEACHER_DEPARTMENT + " TEXT, "+
+             COL_TEACHER_EMAIL + " TEXT);";
 
-        final String queryTeacher = "CREATE TABLE " + TABLE_TEACHER + " ("+
-                COL_TEACHER_ID + " TEXT PRIMARY KEY, "+
-                COL_TEACHER_NAME + " TEXT, " +
-                COL_TEACHER_PASSWORD + " TEXT, " +
-                COL_TEACHER_USERNAME + " TEXT, " +
-                COL_TEACHER_DEPARTMENT + " TEXT, " +
-                COL_TEACHER_EMAIL + " TEXT);";
-
-
+        db.execSQL(queryStudent);
         db.execSQL(queryTeacher);
 
 
@@ -74,7 +72,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
 
-        db.execSQL("DROP TABLE IF EXISTS "+ TABLE_STUDENT);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_STUDENT);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_TEACHER);
         onCreate(db);
     }
 
@@ -136,7 +135,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         else
             return false;
 
+    }
 
+
+    public boolean checkTeacher(String username, String password)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String [] columns = {COL_TEACHER_USERNAME};
+        String selection = COL_TEACHER_USERNAME + "=?" + " and " + COL_TEACHER_PASSWORD + "=?";
+        String [] selectionArgs = {username,password};
+        Cursor cursor = db.query(TABLE_TEACHER,columns,selection,selectionArgs,null,null,null);
+        int count = cursor.getCount();
+        cursor.close();
+        db.close();
+
+        if(count>0)
+            return true;
+        else
+            return false;
 
     }
 

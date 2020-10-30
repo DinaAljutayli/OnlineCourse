@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
@@ -12,138 +12,117 @@
 
     tools:context=".ui.login.LoginActivity">
 
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="151dp"
+        android:layout_height="165dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="286dp"
+        android:layout_marginLeft="286dp"
+        android:layout_marginTop="608dp"
+        android:layout_marginEnd="-10dp"
+        android:layout_marginRight="-10dp"
+        android:layout_marginBottom="-26dp"
+        android:contentDescription="TODO"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/circle_purpule" />
+
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="191dp"
+        android:layout_height="179dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-36dp"
+        android:layout_marginLeft="-36dp"
+        android:layout_marginTop="-39dp"
+        android:layout_marginEnd="240dp"
+        android:layout_marginRight="240dp"
+        android:layout_marginBottom="574dp"
+        android:contentDescription="TODO"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/circle_blue" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="295dp"
+        android:layout_height="298dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginLeft="41dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:contentDescription="TODO"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/login" />
+
+
     <EditText
         android:id="@+id/username_editext_login"
         android:layout_width="284dp"
         android:layout_height="55dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:autofillHints=""
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="400dp"
         android:background="@drawable/circle"
         android:gravity="center"
-        android:hint="@string/prompt_email"
-        android:inputType="textEmailAddress"
-        android:selectAllOnFocus="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        android:hint="@string/username"
+        app:layout_constraintHorizontal_bias="0.493" />
 
     <EditText
         android:id="@+id/password_editext_login"
+        android:layout_below="@id/username_editext_login"
         android:layout_width="284dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/circle"
         android:gravity="center"
-        android:hint="@string/prompt_password"
-        android:imeActionLabel="@string/action_sign_in_short"
-        android:imeOptions="actionDone"
-        android:inputType="textPassword"
-        android:selectAllOnFocus="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username_editext_login"
-        android:autofillHints="" />
+        android:hint="@string/password"
+        app:layout_constraintHorizontal_bias="0.493" />
 
     <Button
         android:id="@+id/login_button"
         android:layout_width="285dp"
         android:layout_height="57dp"
+        android:layout_below="@id/password_editext_login"
         android:layout_gravity="start"
-        android:layout_marginStart="84dp"
-        android:layout_marginLeft="84dp"
-        android:layout_marginEnd="90dp"
-        android:layout_marginRight="90dp"
-        android:layout_marginBottom="84dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/circle"
-        android:enabled="false"
-        android:text="@string/action_sign_in"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.458"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ProgressBar
-        android:id="@+id/loading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="64dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/password_editext_login"
-        app:layout_constraintStart_toStartOf="@+id/password_editext_login"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
-
-    <TextView
-        android:id="@+id/NoAccount_textView"
-        android:layout_width="176dp"
-        android:layout_height="29dp"
-        android:layout_marginBottom="44dp"
-        android:text="@string/don_t_have_an_account"
-        android:textColor="#A235B5"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.404"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="@string/action_sign_in" />
 
     <TextView
         android:id="@+id/signUp_textview"
-        android:layout_width="81dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginBottom="60dp"
+        android:layout_below="@id/login_button"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="70dp"
+        android:layout_width="295dp"
+        android:layout_height="38dp"
         android:text="@string/sign_up"
         android:textColor="#A235B5"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.772"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_button" />
+        app:layout_constraintTop_toBottomOf="@+id/login_button"
+        android:layout_marginStart="70dp" />
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="315dp"
-        android:layout_height="269dp"
-        android:layout_marginTop="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.375"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/login"
-        android:contentDescription="TODO" />
 
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="181dp"
-        android:layout_height="178dp"
-        android:layout_marginEnd="260dp"
-        android:layout_marginRight="260dp"
-        android:layout_marginBottom="576dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/circle_blue"
-        android:contentDescription="TODO" />
 
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="104dp"
-        android:layout_height="104dp"
-        android:layout_marginStart="288dp"
-        android:layout_marginLeft="288dp"
-        android:layout_marginTop="628dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/circle_purpule"
-        android:contentDescription="TODO" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
