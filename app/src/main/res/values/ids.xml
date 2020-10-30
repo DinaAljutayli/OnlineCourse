@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="Level_TextNumber" type="id"> </item>
-    <item name="StudentID_PlainText" type="id"> </item>
 </resources>

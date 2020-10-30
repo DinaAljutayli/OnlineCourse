@@ -17,7 +17,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         DatabaseHelper handler = new DatabaseHelper(this);
-        handler.openDatabase();
+
 
 
         NextButton = (Button) findViewById(R.id.Next_Button);

@@ -28,7 +28,7 @@
 
     <EditText
         android:layout_below="@id/imageView12"
-        android:id="@+id/FullName_Teacher_PlainText"
+        android:id="@+id/FullName_Teacher_PlaneText"
         android:layout_width="149dp"
         android:layout_height="50dp"
         android:layout_marginTop="40dp"
@@ -43,10 +43,10 @@
 
     <EditText
         android:layout_below="@id/imageView12"
-        android:layout_toRightOf="@id/FullName_Teacher_PlainText"
+        android:layout_toRightOf="@id/FullName_Teacher_PlaneText"
         android:layout_marginTop="40dp"
         android:layout_marginLeft="20dp"
-        android:id="@+id/userName_Teacher_Plaintext"
+        android:id="@+id/userName_Teacher_PlaneText"
         android:layout_width="149dp"
         android:layout_height="50dp"
         android:background="@drawable/circle"
@@ -54,15 +54,15 @@
         android:hint="@string/username"
         android:inputType="textPersonName"
         android:layout_marginStart="20dp"
-        android:layout_toEndOf="@id/FullName_Teacher_PlainText"
+        android:layout_toEndOf="@id/FullName_Teacher_PlaneText"
         android:importantForAutofill="no" />
 
 
     <EditText
-        android:id="@+id/Department_Teacher_PlainText"
+        android:id="@+id/Department_Teacher_PlaneText"
         android:layout_width="149dp"
         android:layout_height="50dp"
-        android:layout_below="@id/userName_Teacher_Plaintext"
+        android:layout_below="@id/userName_Teacher_PlaneText"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_toRightOf="@id/Password_Teacher_Text"
@@ -75,7 +75,7 @@
         android:layout_toEndOf="@id/Password_Teacher_Text" />
 
     <EditText
-        android:id="@+id/FaculityID_PlainText"
+        android:id="@+id/FaculityID_PlaneText"
         android:layout_width="149dp"
         android:layout_height="50dp"
         android:layout_below="@id/Password_Teacher_Text"
@@ -92,7 +92,7 @@
         android:id="@+id/Password_Teacher_Text"
         android:layout_width="149dp"
         android:layout_height="50dp"
-        android:layout_below="@id/FullName_Teacher_PlainText"
+        android:layout_below="@id/FullName_Teacher_PlaneText"
         android:layout_marginStart="50dp"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="20dp"
@@ -103,23 +103,21 @@
         android:inputType="textPassword" />
 
 
-
-
     <EditText
-        android:id="@+id/Email_Teacher_Plaintext"
+        android:id="@+id/Email_Teacher_Planetext"
         android:layout_width="149dp"
         android:layout_height="50dp"
-        android:layout_below="@id/Department_Teacher_PlainText"
+        android:layout_below="@id/Department_Teacher_PlaneText"
+        android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:layout_toRightOf="@id/FaculityID_PlainText"
+        android:layout_toEndOf="@id/Password_Teacher_Text"
+        android:layout_toRightOf="@id/FaculityID_PlaneText"
         android:background="@drawable/circle"
         android:gravity="center"
-        android:hint="@string/email"
+        android:hint="Email"
         android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:layout_marginStart="20dp"
-        android:layout_toEndOf="@id/Password_Teacher_Text" />
+        android:inputType="textPersonName" />
 
 
 

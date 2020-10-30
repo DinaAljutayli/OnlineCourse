@@ -21,7 +21,6 @@
         android:layout_marginRight="105dp"
         android:layout_marginBottom="129dp"
         android:background="@drawable/circle"
-        android:text="@string/view"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView10"
         app:layout_constraintEnd_toEndOf="parent"
@@ -137,7 +136,7 @@
         android:layout_marginEnd="72dp"
         android:layout_marginRight="72dp"
         android:layout_marginBottom="588dp"
-        android:text="@string/course_information"
+        android:text="Course Information"
         android:textColor="#A235B5"
         android:textSize="30sp" />
 
