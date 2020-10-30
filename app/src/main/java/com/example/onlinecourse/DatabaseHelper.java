@@ -1,82 +1,69 @@
 package com.example.onlinecourse;
 
-import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+
+
+
+
 public class DatabaseHelper extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME ="TecherStudent.db";
-    public static final String TABLE1_NAME = "Student";
-    public static final String TABLE2_NAME = "Teacher";
-    public static final String TABLE3_NAME = "Course";
 
-    public static final String COLUMN_STUDENT_NAME ="Full_Name";
-    public static final String COLUMN_STUDENT_DEPARTMENT ="Department";
-    public static final String COLUMN_STUDENT_LEVEL ="Level";
-    public static final String COLUMN_STUDENT_ID ="Student_ID";
-    public static final String COLUMN_STUDENT_USERNAME ="Username";
-    public static final String COLUMN_STUDENT_PASSWORD ="Password";
-    public static final String COLUMN_STUDENT_COURSES ="Courses";
 
-    SQLiteDatabase sqLiteDatabase;
+    private static final String DATABASE_NAME = "StudentTeacher.db";
+    private static final int DATABASE_VERSION = 1;
+    private static final String TABLE_STUDENT = "student";
+
+    private static final String COL_STUDENT_ID = "student_id";
+    private static final String COL_STUDENT_NAME = "full_name";
+    private static final String COL_STUDENT_DEPARTMENT = "department";
+    private static final String COL_STUDENT_LEVEL ="level";
+    private static final String COL_STUDENT_USERNAME ="username";
+    private static final String COL_STUDENT_PASSWORD ="password";
+
+
+
+
+
+    SQLiteDatabase db;
 
     public DatabaseHelper(Context context) {
-
-        super(context, DATABASE_NAME, null, 1);
+        super(context,DATABASE_NAME,null,DATABASE_VERSION);
 
     }
 
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {
+    public void onCreate(SQLiteDatabase db) {
+
+     /*   final String CREATE_TODO_TABLE = "CREATE TABLE " + "TODO_TABLE"  + "(" + "ID" + " INTEGER PRIMARY KEY AUTOINCREMENT, " + "TASK" + " TEXT, "
+                + "STATUS" + " INTEGER)";
+        db.execSQL(CREATE_TODO_TABLE);
+
+        //db.execSQL("CREATE TABLE " + TABLE_STUDENT + "(" + COL_STUDENT_ID +"INTEGER PRIMARY KEY)");*/
 
 
-        String CREATE_STUDENT_TABLE = "CREATE TABLE " + TABLE1_NAME + "(Student_ID INTEGER PRIMARY KEY, Department TEXT)";
-        sqLiteDatabase.execSQL(CREATE_STUDENT_TABLE);
-
+        db.execSQL(
+                "CREATE TABLE "+ TABLE_STUDENT + " ( "
+                +COL_STUDENT_ID +" INTEGER PRIMARY KEY, "
+                +COL_STUDENT_DEPARTMENT + "TEXT, "
+                +COL_STUDENT_LEVEL + "INTEGER, "
+                +COL_STUDENT_NAME + "TEXT, "
+                +COL_STUDENT_PASSWORD +"TEXT, "
+                +COL_STUDENT_USERNAME +"TEXT)"
+        );
 
     }
 
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
 
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE1_NAME);
-        onCreate(sqLiteDatabase);
+        db.execSQL("DROP TABLE IF EXISTS "+ TABLE_STUDENT);
+        onCreate(db);
     }
 
+    public void openDatabase(){
 
-    public long addUser(String user, String password, String Email){
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("Username",user);
-        contentValues.put("Email",Email);
-        contentValues.put("password",password);
-
-        long res = db.insert("registeruser",null,contentValues);
-        db.close();
-        return  res;
+        db = this.getWritableDatabase();
     }
-
-  /*  public boolean checkUser(String username, String password ){
-        String[] columns = { COL_1 };
-        SQLiteDatabase db = getReadableDatabase();
-        String selection =   COL_1 + "=?" + " and " + COL_3 + "=?";
-        String[] selectionArgs = {username, password };
-        Cursor cursor = db.query(TABLE_NAME,columns,selection,selectionArgs,null,null,null);
-        int count = cursor.getCount();
-        cursor.close();
-        db.close();
-
-        if(count>0)
-            return  true;
-        else
-            return  false;
-    }
-*/
-    public void openDatabase() {
-        sqLiteDatabase = this.getWritableDatabase();
-    }
-
-
 }

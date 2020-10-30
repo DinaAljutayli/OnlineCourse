@@ -11,14 +11,13 @@ public class HomeActivity extends AppCompatActivity {
 
     Button NextButton;
 
-    DatabaseHelper db;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        db = new DatabaseHelper(this);
+        DatabaseHelper handler = new DatabaseHelper(this);
+        handler.openDatabase();
 
 
         NextButton = (Button) findViewById(R.id.Next_Button);

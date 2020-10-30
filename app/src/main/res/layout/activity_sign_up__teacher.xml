@@ -62,15 +62,17 @@
         android:id="@+id/Department_Teacher_PlainText"
         android:layout_width="149dp"
         android:layout_height="50dp"
-        android:layout_below="@id/Password_Teacher_Text"
-        android:layout_marginLeft="-144dp"
+        android:layout_below="@id/userName_Teacher_Plaintext"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_toRightOf="@id/Password_Teacher_Text"
         android:background="@drawable/circle"
         android:gravity="center"
         android:hint="@string/departement"
         android:importantForAutofill="no"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@id/Password_Teacher_Text" />
 
     <EditText
         android:id="@+id/FaculityID_PlainText"
@@ -88,17 +90,38 @@
 
     <EditText
         android:id="@+id/Password_Teacher_Text"
-        android:layout_width="308dp"
-        android:layout_height="48dp"
+        android:layout_width="149dp"
+        android:layout_height="50dp"
         android:layout_below="@id/FullName_Teacher_PlainText"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="50dp"
         android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/circle"
         android:gravity="center"
         android:hint="@string/password"
-        android:inputType="textPassword"
         android:importantForAutofill="no"
-        android:layout_marginStart="50dp" />
+        android:inputType="textPassword" />
+
+
+
+
+    <EditText
+        android:id="@+id/Email_Teacher_Plaintext"
+        android:layout_width="149dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/Department_Teacher_PlainText"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/FaculityID_PlainText"
+        android:background="@drawable/circle"
+        android:gravity="center"
+        android:hint="@string/email"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@id/Password_Teacher_Text" />
+
+
 
     <Button
         android:id="@+id/SignUp_Button"
@@ -110,6 +133,8 @@
         android:layout_marginTop="270dp"
         android:background="@drawable/circle"
         android:text="@string/signup" />
+
+
 
 
 </RelativeLayout>
