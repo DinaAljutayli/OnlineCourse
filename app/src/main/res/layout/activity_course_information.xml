@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".CourseInformation">
 
+
     <Button
         android:id="@+id/view_Button"
         android:layout_width="202dp"
@@ -14,46 +15,33 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="94dp"
-        android:layout_marginLeft="94dp"
+        android:layout_marginStart="102dp"
+        android:layout_marginLeft="102dp"
         android:layout_marginTop="37dp"
         android:layout_marginEnd="105dp"
         android:layout_marginRight="105dp"
-        android:layout_marginBottom="129dp"
+        android:layout_marginBottom="78dp"
         android:background="@drawable/circle"
+        android:text="@string/view"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:layout_constraintVertical_bias="1.0" />
 
-    <RadioButton
-
-        android:id="@+id/android_radioButton"
-        android:layout_width="199dp"
-        android:layout_height="134dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="113dp"
-        android:layout_marginRight="113dp"
-        android:layout_marginBottom="181dp"
-        android:background="@drawable/android" />
-
-    <RadioButton
-
-        android:id="@+id/kotlin_radioButton"
-        android:layout_width="201dp"
-        android:layout_height="124dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="113dp"
-        android:layout_marginRight="113dp"
-        android:layout_marginBottom="309dp"
-        android:background="@drawable/kotlin" />
+<!--    <TextView-->
+<!--        android:id="@+id/textView5"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="80dp"-->
+<!--        android:layout_marginLeft="80dp"-->
+<!--        android:layout_marginTop="103dp"-->
+<!--        android:layout_marginEnd="72dp"-->
+<!--        android:layout_marginRight="72dp"-->
+<!--        android:layout_marginBottom="588dp"-->
+<!--        android:text="Course Information"-->
+<!--        android:textColor="#A235B5"-->
+<!--        android:textSize="30sp" />-->
 
     <ImageView
         android:id="@+id/imageView15"
@@ -120,39 +108,43 @@
         app:srcCompat="@drawable/circle_blue"
         android:contentDescription="TODO" />
 
-    <TextView
-        android:id="@+id/textView5"
+    <RadioGroup
+        android:id="@+id/languages_RadioGroup"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="103dp"
-        android:layout_marginEnd="72dp"
-        android:layout_marginRight="72dp"
-        android:layout_marginBottom="588dp"
-        android:text="Course Information"
-        android:textColor="#A235B5"
-        android:textSize="30sp" />
+        android:layout_height="420dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginLeft="95dp"
+        android:layout_marginTop="100dp"
+        android:foregroundGravity="center"
+        android:gravity="center">
 
-    <RadioButton
+        <RadioButton
+            android:id="@+id/java_RadioButton"
+            android:layout_width="236dp"
+            android:layout_height="156dp"
 
-        android:id="@+id/java_radioButton"
-        android:layout_width="201dp"
-        android:layout_height="124dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="115dp"
-        android:layout_marginRight="115dp"
-        android:layout_marginBottom="424dp"
-        android:checked="true"
-        android:background="@drawable/java" />
+            android:background="@drawable/java">
+
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/kotlin_RadioButton"
+            android:layout_width="236dp"
+            android:layout_height="156dp"
+            android:background="@drawable/kotlin">
+
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/android_RadioButton"
+            android:layout_width="236dp"
+            android:layout_height="156dp"
+            android:background="@drawable/android">
+
+        </RadioButton>
+
+
+    </RadioGroup>
 
 
 </RelativeLayout>
