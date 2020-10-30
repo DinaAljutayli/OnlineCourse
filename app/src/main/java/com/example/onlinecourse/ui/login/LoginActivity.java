@@ -34,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         signUp_textview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String user = username_editext_login.getText().toString().trim();
                 String password = password_editext_login.getText().toString().trim();
              //   Boolean res = db.checkUser(user, password);

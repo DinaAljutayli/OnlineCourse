@@ -23,4 +23,6 @@
     <string name="faculityid">FaculityID</string>
     <string name="studentspic">StudentsPic</string>
     <string name="student_id">Student ID</string>
+    <string name="course_information">Course Information</string>
+    <string name="view">View</string>
 </resources>
