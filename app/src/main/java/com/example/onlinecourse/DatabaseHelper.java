@@ -6,8 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-
-
+import java.util.ArrayList;
 
 
 public class DatabaseHelper extends SQLiteOpenHelper {
@@ -37,6 +36,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     SQLiteDatabase db;
+
+    ArrayList<String> list;
 
     public DatabaseHelper(Context context) {
         super(context,DATABASE_NAME,null,DATABASE_VERSION);
@@ -156,8 +157,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-//    public void openDatabase(){
-//
-//        db = this.getWritableDatabase();
-//    }
+    public Cursor studentInfo()
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String query = "select * from " + TABLE_STUDENT ;
+        Cursor c = db.rawQuery(query,null);
+
+        return c;
+    }
+
 }

@@ -24,4 +24,5 @@
     <string name="studentspic">StudentsPic</string>
     <string name="student_id">Student ID</string>
     <string name="view">View</string>
+    <string name="student_info">Student Information</string>
 </resources>
