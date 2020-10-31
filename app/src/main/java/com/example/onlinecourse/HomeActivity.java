@@ -16,11 +16,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        DatabaseHelper handler = new DatabaseHelper(this);
-
-
-
-        NextButton = (Button) findViewById(R.id.Next_Button);
+        NextButton = findViewById(R.id.Next_Button);
         NextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

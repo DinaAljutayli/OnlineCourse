@@ -38,15 +38,16 @@ public class SignUp_Student extends AppCompatActivity {
         SignUp_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Student s = new Student();
 
-                String fullName = FullName_PlaneText.getText().toString();
-                String id = StudentID_PlaneText.getText().toString().trim();
-                String level = Level_TextNumber.getText().toString().trim();
-                String department = Department_PlaneText.getText().toString().trim();
-                String password = Password_Text.getText().toString().trim();
-                String username = userName_Planetext.getText().toString().trim();
+                s.setName(FullName_PlaneText.getText().toString());
+                s.setId(Integer.parseInt(StudentID_PlaneText.getText().toString()));
+                s.setLevel(Level_TextNumber.getText().toString().trim());
+                s.setDepartment(Department_PlaneText.getText().toString().trim());
+                s.setPassword(Password_Text.getText().toString().trim());
+                s.setUsername(userName_Planetext.getText().toString().trim());
 
-               long val = db.addStudent(id,level,department,fullName,password,username);
+               long val = db.addStudent(s);
 
                 if(val>0) {
 

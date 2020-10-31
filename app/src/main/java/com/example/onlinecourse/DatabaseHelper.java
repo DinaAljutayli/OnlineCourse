@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.sql.Struct;
 import java.util.ArrayList;
 
 
@@ -48,7 +49,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
      final String queryStudent = "CREATE TABLE " + TABLE_STUDENT + " ("+
-             COL_STUDENT_ID + " TEXT PRIMARY KEY, "+
+             COL_STUDENT_ID + " INTEGER PRIMARY KEY, "+
              COL_STUDENT_NAME + " TEXT, " +
              COL_STUDENT_PASSWORD + " TEXT, " +
              COL_STUDENT_USERNAME + " TEXT, " +
@@ -78,17 +79,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public long addStudent(String id, String level, String department, String name, String password, String username)
+    public long addStudent(Student s)
     {
         SQLiteDatabase db = this.getWritableDatabase();
 
+
         ContentValues cv = new ContentValues();
-        cv.put(COL_STUDENT_ID,id);
-        cv.put(COL_STUDENT_LEVEL,level);
-        cv.put(COL_STUDENT_DEPARTMENT,department);
-        cv.put(COL_STUDENT_NAME,name);
-        cv.put(COL_STUDENT_PASSWORD,password);
-        cv.put(COL_STUDENT_USERNAME,username);
+        cv.put(COL_STUDENT_ID,s.getId());
+        cv.put(COL_STUDENT_LEVEL,s.getLevel());
+        cv.put(COL_STUDENT_DEPARTMENT,s.getDepartment());
+        cv.put(COL_STUDENT_NAME,s.getName());
+        cv.put(COL_STUDENT_PASSWORD,s.getPassword());
+        cv.put(COL_STUDENT_USERNAME,s.getUsername());
 
         long res = db.insert(TABLE_STUDENT,null,cv);
 
@@ -166,5 +168,60 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return c;
     }
+
+    public ArrayList<Student> viewableInfo()
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String query = "select full_name,department,level from student";
+
+        Cursor c = db.rawQuery(query,null);
+
+        ArrayList<Student> arrayStudent = new ArrayList<Student>();
+        if(c.moveToFirst())
+        {
+           do {
+               Student s = new Student();
+
+
+               s.setName(c.getString(c.getColumnIndex("full_name")));
+               s.setDepartment(c.getString(c.getColumnIndex("department")));
+               s.setLevel(c.getString(c.getColumnIndex("level")));
+
+               arrayStudent.add(s);
+
+           }while (c.moveToNext());
+
+        }
+        //db.close();
+        return arrayStudent;
+    }
+
+
+    public Student selectbyID(int id)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String query = "select full_name,department,level from student where student_id="+id;
+
+        Cursor c = db.rawQuery(query,null);
+
+        Student s = new Student();
+        if(c.moveToFirst())
+        {
+
+                s.setName(c.getString(c.getColumnIndex("full_name")));
+                s.setDepartment(c.getString(c.getColumnIndex("department")));
+                s.setLevel(c.getString(c.getColumnIndex("level")));
+
+
+
+        }
+        //db.close();
+        return s;
+    }
+
+
+
 
 }

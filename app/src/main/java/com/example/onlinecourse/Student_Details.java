@@ -7,10 +7,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 
 public class Student_Details extends AppCompatActivity {
 
     TextView dialog_TextView;
+    ArrayList<Student> s;
+    DatabaseHelper db;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,10 +25,13 @@ public class Student_Details extends AppCompatActivity {
 
         dialog_TextView = findViewById(R.id.dialog_TextView);
 
-        Intent intent = getIntent();
+        String strID = getIntent().getStringExtra("StudentID");
 
-        String val = intent.getStringExtra("detail");
+        db = new DatabaseHelper(this);
+        s = db.viewableInfo();
 
-        dialog_TextView.setText(val);
+
+        dialog_TextView.setText(s.get(0).getLevel() + "\n" + s.get(0).getName());
+       // dialog_TextView.setText(s.getName() + "\n" + s.getDepartment() + "\n" + s.getLevel());
     }
 }
