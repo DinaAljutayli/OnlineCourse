@@ -49,9 +49,9 @@ public class Student_Info extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                Student s= new Student();
+              //  Student s= new Student();
                 Intent intent = new Intent(Student_Info.this,Student_Details.class);
-                intent.putExtra("StudentID",s.getId());
+               // intent.putExtra("StudentID",s.getId());
                 startActivity(intent);
 
 

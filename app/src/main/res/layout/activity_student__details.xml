@@ -11,8 +11,8 @@
         android:id="@+id/dialog_TextView"
         android:layout_width="match_parent"
         android:layout_height="140dp"
-        android:gravity="center"
         android:textSize="18sp"
+        android:padding="10dp"
         android:textColor="@color/colorAccent">
 
     </TextView>

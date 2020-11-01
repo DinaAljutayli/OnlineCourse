@@ -20,7 +20,6 @@ public class Adapter_Student extends BaseAdapter {
     {
         this.act=act;
         this.arrayStudent=arrayStudent;
-
     }
     @Override
     public int getCount() {
@@ -42,8 +41,6 @@ public class Adapter_Student extends BaseAdapter {
        TextView dialog_TextView;
      //   ListView listView;
     }
-
-
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
 

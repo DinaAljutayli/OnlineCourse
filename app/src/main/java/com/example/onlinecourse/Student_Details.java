@@ -16,8 +16,6 @@ public class Student_Details extends AppCompatActivity {
     ArrayList<Student> s;
     DatabaseHelper db;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,8 +28,7 @@ public class Student_Details extends AppCompatActivity {
         db = new DatabaseHelper(this);
         s = db.viewableInfo();
 
-
-        dialog_TextView.setText(s.get(0).getLevel() + "\n" + s.get(0).getName());
+        dialog_TextView.setText("Name: "+s.get(5).getName() + "\n" + "Department: " + s.get(5).getDepartment() + "\n" + "Level: " + s.get(5).getLevel());
        // dialog_TextView.setText(s.getName() + "\n" + s.getDepartment() + "\n" + s.getLevel());
     }
 }
